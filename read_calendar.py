@@ -2,13 +2,15 @@
 Read calendar to extract the Thursdays dates for Toastmaster.
 """
 import logging
+import os
+import pathlib
 import sys
 
 import numpy as np
 import pandas as pd
 
-MEMBER_LIST = 'C:/Users/rchan/PycharmProjects/Toast/member list.txt'
-CALENDAR = 'C:/Users/rchan/PycharmProjects/Toast/12-Month Calendar.xlsx'
+MEMBER_LIST = pathlib.Path(os.getcwd(), 'member list.txt')
+CALENDAR = pathlib.Path(os.getcwd(), '12-Month Calendar.xlsx')
 
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
           'September', 'October', 'November', 'December']

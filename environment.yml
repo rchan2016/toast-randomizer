@@ -4,7 +4,7 @@
 # - To update an existing environment to match:
 #   $ conda env update --prune
 #
-name: toast
+name: TM
 dependencies:
 - alabaster=0.7.10=py36_0
 - babel=2.4.0=py36_0

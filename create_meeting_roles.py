@@ -3,6 +3,8 @@ Main module to create an excel report with meeting roles filled for each Thursda
 Toastmasters meeting.  Individual roles will be assigned randomly.
 """
 import logging
+import os
+import pathlib
 import sys
 import random
 
@@ -11,7 +13,7 @@ import pandas as pd
 
 import read_calendar
 
-CLUB_ROSTER = 'C:/Users/rchan/PycharmProjects/Toast/club roster.xlsx'
+CLUB_ROSTER = pathlib.Path(os.getcwd(),'club roster.xlsx')
 
 ROLES = {'C': 'RED',
          'G': 'GREEN',
@@ -92,7 +94,7 @@ def main():
 
     df = _add_roles(df)
 
-    sw_writer = pd.ExcelWriter(CLUB_ROSTER, engine='xlsxwriter',
+    sw_writer = pd.ExcelWriter(str(CLUB_ROSTER), engine='xlsxwriter',
                                date_format = 'yyyy-mm-dd', datetime_format='yyyy-mm-dd')
     df.to_excel(sw_writer, sheet_name='Club Roster')
 
